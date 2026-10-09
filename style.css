@@ -2,7 +2,7 @@
    General Page Styles
    ============================== */
 
-/* Universal selector: include padding and border in element widths */
+/* Universal selector */
 * {
     box-sizing: border-box;
 }
@@ -16,19 +16,14 @@ body {
     line-height: 1.6;
 }
 
-h2,
-h3 {
+h2 {
     color: #ffffff;
     line-height: 1.3;
-}
-
-h2 {
     margin-top: 40px;
     padding-bottom: 6px;
     border-bottom: 1px solid #444;
 }
 
-/* The first heading in a section doesn't need the extra top gap */
 section > h2:first-child {
     margin-top: 0;
 }
@@ -41,16 +36,6 @@ a {
 a:hover {
     color: #ffffff;
 }
-
-ul,
-ol {
-    padding-left: 24px;
-}
-
-li {
-    margin-bottom: 6px;
-}
-
 
 /* ==============================
     Header
@@ -94,10 +79,6 @@ li {
     margin: 0;
 }
 
-.main-nav li {
-    margin: 0;
-}
-
 .main-nav a {
     display: block;
     padding: 6px 12px;
@@ -112,11 +93,12 @@ li {
     border-color: #8ab4f8;
 }
 
-/* Attribute selector: highlight the link for the page being viewed */
+/* Attribute selector */
 .main-nav a[aria-current="page"] {
     background-color: #8ab4f8;
     color: #181818;
 }
+
 
 /* ==============================
     Main Content
@@ -136,40 +118,24 @@ li {
     border-radius: 6px;
 }
 
-/* ID selector: the main title at the top of each page */
+/* ID selector */
 #page-title {
     margin-top: 0;
     font-size: 2.2em;
     color: #ffffff;
 }
 
-/* ==============================
-    About page profile (flexbox)
-   ============================== */
-
-.profile {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    align-items: flex-start;
+/* Intro paragraph */
+.lead {
+    font-size: 1.15em;
+    color: #cccccc;
 }
 
-.profile-info {
-    flex: 1 1 300px;
+/* Small grey text for captions and notes */
+.note {
+    font-size: 0.9em;
+    color: #999999;
 }
-
-.profile-side {
-    flex: 0 1 260px;
-    padding: 15px 20px;
-    background-color: #2a2a2a;
-    border: 1px solid #444;
-    border-radius: 6px;
-}
-
-.profile-side h3 {
-    margin-top: 0;
-}
-
 
 /* ==============================
    Footer
