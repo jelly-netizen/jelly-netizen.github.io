@@ -1,4 +1,3 @@
-// Menu items: [file name, link text]. Edit this list to change the menu.
 const NAV_LINKS = [
     ["index.html", "Home"],
     ["browserhistory.html", "Browser History"],
@@ -16,8 +15,7 @@ function buildNav() {
     if (!nav) {
         return;
     }
-
-    // Work out which page is open. A URL ending in "/" is the homepage.
+    
     let currentPage = window.location.pathname.split("/").pop();
     if (currentPage === "") {
         currentPage = "index.html";
@@ -44,5 +42,4 @@ function buildNav() {
     nav.replaceChildren(list);
 }
 
-// Build the menu once the page's HTML has loaded
 document.addEventListener("DOMContentLoaded", buildNav);
