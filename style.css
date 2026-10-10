@@ -138,6 +138,83 @@ a:hover {
 }
 
 /* ==============================
+   Browser Table (Popular Browsers page)
+   ============================== */
+
+/* Lets a wide table scroll sideways instead of overflowing on phones */
+.table-wrap {
+    overflow-x: auto;
+}
+
+.browser-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.browser-table caption {
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.browser-table th,
+.browser-table td {
+    padding: 10px 12px;
+    border: 1px solid #444;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Column headings */
+.browser-table thead th {
+    background-color: #2f3b52;
+    color: #ffffff;
+}
+
+/* Browser name cells: logo and name side by side */
+.browser-table tbody th {
+    white-space: nowrap;
+    color: #ffffff;
+}
+
+/* Logos sit on a white tile so they show up on the dark background */
+.browser-table img {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    padding: 4px;
+    object-fit: contain;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+
+/* Stripe every other row, and highlight the row under the mouse */
+.browser-table tbody tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+.browser-table tbody tr:hover {
+    background-color: #333d4f;
+}
+
+/* Right-align numbers so the decimal points line up */
+.browser-table .num {
+    text-align: right;
+}
+
+/* Keep each percentage on one line */
+.browser-table td.num {
+    white-space: nowrap;
+}
+
+/* Give the Highlights column enough room to read comfortably */
+.browser-table td:last-child {
+    min-width: 240px;
+}
+
+/* ==============================
    Footer
    ============================== */
 
