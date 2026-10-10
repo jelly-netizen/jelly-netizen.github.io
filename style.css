@@ -138,6 +138,42 @@ a:hover {
 }
 
 /* ==============================
+   Card Grid 
+   ============================== */
+
+/* Cards fill as many columns as fit, each at least 280px wide */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-top: 3px solid #8ab4f8;
+    border-radius: 6px;
+}
+
+.card h2,
+.card h3 {
+    margin-top: 0;
+    color: #8ab4f8;
+}
+
+/* Lists inside cards don't need extra space at the bottom */
+.card ul,
+.card ol {
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+.card li {
+    margin-bottom: 6px;
+}
+
+/* ==============================
    Browser Table (Popular Browsers page)
    ============================== */
 
