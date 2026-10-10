@@ -1,10 +1,7 @@
 const NAV_LINKS = [
     ["index.html", "Home"],
     ["browserhistory.html", "Browser History"],
-    ["earlybrowsers.html", "Early Browsers"],
     ["popularbrowsers.html", "Popular Browsers"],
-    ["browserwars.html", "Browser Wars"],
-    ["browserfuture.html", "Future of Browsers"],
     ["keyconcepts.html", "Key Concepts"],
     ["references.html", "References"],
     ["about.html", "About"]
