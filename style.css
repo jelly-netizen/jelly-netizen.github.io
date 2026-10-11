@@ -306,4 +306,9 @@ a:hover {
     #page-title {
         font-size: 1.7em;
     }
+       /* Stack the concept name above its description on phones */
+    .concept-list .card {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
 }
