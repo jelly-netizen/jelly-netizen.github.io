@@ -173,6 +173,26 @@ a:hover {
     margin-bottom: 6px;
 }
 
+/* Key Concepts page: one full-width row per concept */
+.concept-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.concept-list .card {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 20px;
+    align-items: center;
+    border-top: 1px solid #444;
+    border-left: 4px solid #8ab4f8;
+}
+
+.concept-list .card h3,
+.concept-list .card p {
+    margin: 0;
+}
+
 /* ==============================
    Browser Table (Popular Browsers page)
    ============================== */
