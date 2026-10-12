@@ -1,2 +1,2 @@
 # jelly-netizen.github.io
-web dev class test 
+web dev class project
