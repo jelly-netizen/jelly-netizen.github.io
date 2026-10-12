@@ -2,7 +2,6 @@
    General Page Styles
    ============================== */
 
-/* Universal selector */
 * {
     box-sizing: border-box;
 }
@@ -93,7 +92,6 @@ a:hover {
     border-color: #8ab4f8;
 }
 
-/* Attribute selector */
 .main-nav a[aria-current="page"] {
     background-color: #8ab4f8;
     color: #181818;
@@ -131,7 +129,7 @@ a:hover {
     color: #cccccc;
 }
 
-/* Small grey text for captions and notes */
+/* Notes */
 .note {
     font-size: 0.9em;
     color: #999999;
@@ -162,7 +160,7 @@ a:hover {
     color: #8ab4f8;
 }
 
-/* Lists inside cards don't need extra space at the bottom */
+/* Lists inside cards */
 .card ul,
 .card ol {
     margin-bottom: 0;
@@ -173,7 +171,7 @@ a:hover {
     margin-bottom: 6px;
 }
 
-/* Key Concepts page: one full-width row per concept */
+/* Key Concepts page */
 .concept-list {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -196,7 +194,6 @@ a:hover {
    Browser Table (Popular Browsers page)
    ============================== */
 
-/* Lets a wide table scroll sideways instead of overflowing on phones */
 .table-wrap {
     overflow-x: auto;
 }
@@ -227,13 +224,13 @@ a:hover {
     color: #ffffff;
 }
 
-/* Browser name cells: logo and name side by side */
+/* Browser name cells */
 .browser-table tbody th {
     white-space: nowrap;
     color: #ffffff;
 }
 
-/* Logos sit on a white tile so they show up on the dark background */
+/* White background for logos */
 .browser-table img {
     width: 48px;
     height: 48px;
@@ -245,7 +242,7 @@ a:hover {
     border-radius: 6px;
 }
 
-/* Stripe every other row, and highlight the row under the mouse */
+/* Stripe every other row, and highlight the row being hovered */
 .browser-table tbody tr:nth-child(even) {
     background-color: #2a2a2a;
 }
@@ -294,7 +291,7 @@ a:hover {
 
 
 /* ==============================
-   Small screens
+   Mobile
    ============================== */
 
 @media (max-width: 600px) {
@@ -306,7 +303,8 @@ a:hover {
     #page-title {
         font-size: 1.7em;
     }
-       /* Stack the concept name above its description on phones */
+    
+    /* Stack the concept name above its description on phones */
     .concept-list .card {
         grid-template-columns: 1fr;
         gap: 6px;
