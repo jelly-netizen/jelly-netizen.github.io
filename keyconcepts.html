@@ -3,116 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Market share of the most popular desktop and mobile browsers, with profiles of Chrome, Safari, Edge and Firefox.">
-    <title>Popular Browsers | Web Browsers</title>
+    <meta name="description" content="Seven key concepts behind web browsers: URLs, HTTP/HTTPS, TCP, IP, DNS, browser engines and JavaScript.">
+    <title>Key Concepts | Web Browsers</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Site header and main menu -->
+    <!-- Site header and main menu  -->
     <header class="site-header">
         <div class="header-content">
             <p class="site-name"><a href="index.html">Web Browsers</a></p>
-
-            <!-- Nav -->
+            <!--Nav-->
             <nav class="main-nav" aria-label="Main menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="browserhistory.html">Browser History</a></li>
-                    <li><a href="popularbrowsers.html" aria-current="page">Popular Browsers</a></li>
-                    <li><a href="keyconcepts.html">Key Concepts</a></li>
+                    <li><a href="popularbrowsers.html">Popular Browsers</a></li>
+                    <li><a href="keyconcepts.html" aria-current="page">Key Concepts</a></li>
                     <li><a href="references.html">References</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
+
     <!-- Main page content -->
     <main class="page-content">
         <div class="content-container">
-            <h1 id="page-title">Popular Browsers</h1>
+            <h1 id="page-title">Key Concepts</h1>
             <p class="lead">
-                A handful of browsers make up almost the entire market. Here is
-                who leads on desktop and mobile as of 2024.
+                Communication over the internet relies on several protocols to move data
+                between devices. These concepts explain what happens behind the scenes
+                every time you open a web page.
             </p>
-            <div class="table-wrap">
-                <table class="browser-table">
-                    <caption>Most popular browsers by market share (2024)</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Browser</th>
-                            <th scope="col">Owner</th>
-                            <th scope="col">Engine</th>
-                            <th scope="col" class="num">Desktop share</th>
-                            <th scope="col" class="num">Mobile share</th>
-                            <th scope="col">Highlights</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">
-                                <img src="images/chrome.png" alt="Google Chrome logo" width="48" height="48">
-                                Google Chrome
-                            </th>
-                            <td>Google</td>
-                            <td>Chromium</td>
-                            <td class="num">66.64%</td>
-                            <td class="num">55.78%</td>
-                            <td>The most popular browser on both desktop and mobile. Known for its speed, performance and clean design.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <img src="images/safari.png" alt="Safari logo" width="48" height="48">
-                                Safari
-                            </th>
-                            <td>Apple</td>
-                            <td>WebKit</td>
-                            <td class="num">13.92%</td>
-                            <td class="num">33.11%</td>
-                            <td>Built into every Mac, iPhone and iPad. One of the few browsers not based on Chromium.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <img src="images/edge.png" alt="Microsoft Edge logo" width="48" height="48">
-                                Microsoft Edge
-                            </th>
-                            <td>Microsoft</td>
-                            <td>Chromium</td>
-                            <td class="num">4.55%</td>
-                            <td class="num">&ndash;</td>
-                            <td>The default browser on Windows. Rebuilt on Chromium and released to the public in 2020.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <img src="images/opera.png" alt="Opera logo" width="48" height="48">
-                                Opera
-                            </th>
-                            <td>Opera</td>
-                            <td>Chromium</td>
-                            <td class="num">3.02%</td>
-                            <td class="num">0.49%</td>
-                            <td>One of many browsers built on Chromium, along with Edge and Brave.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <img src="images/firefox.png" alt="Firefox logo" width="48" height="48">
-                                Firefox
-                            </th>
-                            <td>Mozilla Corporation</td>
-                            <td>Gecko</td>
-                            <td class="num">2.18%</td>
-                            <td class="num">0.37%</td>
-                            <td>Free and open source. One of the oldest browsers still around, with a peak share of 32.21% in 2009.</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+            <!-- Concept list -->
+            <div class="card-grid concept-list">
+                <article class="card">
+                    <h3>URL</h3>
+                    <p>
+                        A Uniform Resource Locator is the address of a page on the web,
+                        such as <code>https://www.youtube.com</code>. Entering one in the
+                        address bar is how a user starts loading a page.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>HTTP and HTTPS</h3>
+                    <p>
+                        Hypertext Transfer Protocol lets a browser request pages from a
+                        server and receive them. HTTPS is the secure version, which encrypts
+                        the data sent between the browser and the server.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>TCP</h3>
+                    <p>
+                        Transmission Control Protocol delivers data reliably between devices.
+                        It breaks data into packets and makes sure they are reassembled in
+                        the correct order.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>IP</h3>
+                    <p>
+                        Internet Protocol gives every device a unique address, called an IP
+                        address, and routes packets to those addresses.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>DNS</h3>
+                    <p>
+                        The Domain Name System works like a phonebook. It turns easy to
+                        remember names like <code>www.youtube.com</code> into the numeric IP
+                        addresses computers use.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>Browser Engine</h3>
+                    <p>
+                        The part of a browser that interprets HTML, CSS and JavaScript and
+                        draws the page. The three major engines are Chromium, WebKit and Gecko.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>JavaScript</h3>
+                    <p>
+                        The language used with HTML and CSS to build web apps. Introduced in
+                        1995, it was slow until Google's V8 engine (2008) compiled it to
+                        machine code just in time. Today it lets browsers run complete
+                        applications.
+                    </p>
+                </article>
             </div>
         </div>
     </main>
 
-    <!-- Site footer -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-content">
             <p>This website is a class project for IT 3203 Web Development.</p>
