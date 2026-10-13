@@ -139,10 +139,10 @@ a:hover {
    Card Grid 
    ============================== */
 
-/* Cards fill as many columns as fit, each at least 280px wide */
+/* Cards fill as many columns as fit, each at least 180px wide */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
 }
 
@@ -171,13 +171,13 @@ a:hover {
     margin-bottom: 6px;
 }
 
-/* Key Concepts page */
-.concept-list {
+/* Card rows: one full-width row per card (Key Concepts, Browser Profiles) */
+.card-rows {
     grid-template-columns: 1fr;
     gap: 12px;
 }
 
-.concept-list .card {
+.card-rows .card {
     display: grid;
     grid-template-columns: 180px 1fr;
     gap: 20px;
@@ -185,9 +185,33 @@ a:hover {
     border-top: 1px solid #444;
     border-left: 4px solid #8ab4f8;
 }
-.concept-list .card h3,
-.concept-list .card p {
+.card-rows .card h3,
+.card-rows .card p,
+.card-rows .card ul {
     margin: 0;
+}
+
+/* Left column of a browser profile: */
+.card-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    padding-right: 20px;
+    border-right: 1px solid #444;
+    text-align: center;
+}
+
+/* Browser logo on a white tile so it stays visible on the dark background */
+.card-heading img {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 10px;
+    padding: 8px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 8px;
 }
 
 /* ==============================
@@ -304,9 +328,16 @@ a:hover {
         font-size: 1.7em;
     }
     
-    /* Stack the concept name above its description on phones */
-    .concept-list .card {
+    /* Stack the card heading above its content on phones */
+    .card-rows .card {
         grid-template-columns: 1fr;
         gap: 6px;
+    }
+
+    /* On phones the divider moves under the logo and name */
+    .card-heading {
+        padding: 0 0 10px 0;
+        border-right: none;
+        border-bottom: 1px solid #444;
     }
 }
