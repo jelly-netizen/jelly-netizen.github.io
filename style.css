@@ -191,7 +191,19 @@ a:hover {
     margin: 0;
 }
 
-/* Left column of a browser profile: */
+/* When a key term link jumps to a card (e.g. keyconcepts.html#dns),
+   leave space above it and highlight it so it's easy to spot */
+.card[id] {
+    scroll-margin-top: 20px;
+}
+
+.card:target {
+    border-color: #f6c35b;
+    background-color: #333d4f;
+}
+
+/* Left column of a browser profile: logo and name centered,
+   with a divider line separating it from the details */
 .card-heading {
     display: flex;
     flex-direction: column;
@@ -288,6 +300,288 @@ a:hover {
 /* Give the Highlights column enough room to read comfortably */
 .browser-table td:last-child {
     min-width: 240px;
+}
+
+/* ==============================
+   Quiz Page
+   ============================== */
+
+/* Make sure the "hidden" attribute always hides an element,
+   even if a class below gives it a display value */
+[hidden] {
+    display: none !important;
+}
+
+/* --- Buttons --- */
+
+.btn {
+    padding: 10px 22px;
+    border: 2px solid #8ab4f8;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #8ab4f8;
+    color: #181818;
+}
+
+.btn-primary:hover {
+    background-color: #aecbfa;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #8ab4f8;
+}
+
+.btn-secondary:hover {
+    background-color: #2f3b52;
+}
+
+/* Keyboard users see a clear outline on the focused control */
+.btn:focus-visible,
+.quiz-form input:focus-visible {
+    outline: 3px solid #f6c35b;
+    outline-offset: 2px;
+}
+
+/* --- Timer --- */
+
+/* "sticky" keeps the timer visible at the top while scrolling */
+.quiz-timer {
+    position: sticky;
+    top: 10px;
+    z-index: 1;
+    margin-bottom: 20px;
+    padding: 10px 16px;
+    background-color: #2f3b52;
+    border: 1px solid #8ab4f8;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#time-left {
+    font-size: 1.2em;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Last minute: the timer turns red */
+.quiz-timer.warning {
+    background-color: #4a2626;
+    border-color: #f28b82;
+    color: #f28b82;
+}
+
+/* --- Questions --- */
+
+.question {
+    margin: 0 0 20px 0;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-left: 4px solid #8ab4f8;
+    border-radius: 6px;
+}
+
+.question legend {
+    padding: 0 6px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Fill-in-the-blank: the sentence sits above a full-width text box */
+.question label[for] {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.question input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px 12px;
+    background-color: #181818;
+    color: #e5e5e5;
+    border: 1px solid #666;
+    border-radius: 4px;
+    font: inherit;
+}
+
+/* Radio and checkbox choices are stacked as clickable rows */
+.choices {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.choices label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.choices label:hover {
+    border-color: #8ab4f8;
+    background-color: #333d4f;
+}
+
+/* Highlight the choice the user has picked */
+.choices label:has(input:checked) {
+    border-color: #8ab4f8;
+    background-color: #2f3b52;
+}
+
+.choices input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #8ab4f8;
+}
+
+/* After grading, choices can't be changed, so don't show them as clickable */
+.question:disabled .choices label {
+    cursor: default;
+}
+
+/* Explanation shown under each question after grading */
+.feedback:empty {
+    display: none;
+}
+
+.feedback {
+    margin-top: 12px;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+/* Correct answers are green, incorrect answers are red */
+.question.correct {
+    border-left-color: #81c995;
+}
+
+.question.correct .feedback {
+    background-color: #1e3a27;
+    color: #81c995;
+}
+
+.question.incorrect {
+    border-left-color: #f28b82;
+}
+
+.question.incorrect .feedback {
+    background-color: #4a2626;
+    color: #f28b82;
+}
+
+.quiz-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+/* --- Results --- */
+
+.quiz-results {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 2px solid;
+    border-radius: 6px;
+}
+
+.quiz-results.pass {
+    border-color: #81c995;
+    background-color: #1e3a27;
+}
+
+.quiz-results.fail {
+    border-color: #f28b82;
+    background-color: #3a2222;
+}
+
+.quiz-results h2 {
+    margin-top: 0;
+    border-bottom: none;
+}
+
+.quiz-results.pass h2 {
+    color: #81c995;
+}
+
+.quiz-results.fail h2 {
+    color: #f28b82;
+}
+
+/* Result, score and time shown as three boxes in a row */
+.result-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    flex: 1 1 150px;
+    padding: 12px 15px;
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 6px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85em;
+    color: #999999;
+}
+
+.stat-value {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Per-question results table */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #222;
+}
+
+.results-table caption {
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.results-table th,
+.results-table td {
+    padding: 8px 10px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+.results-table thead th {
+    background-color: #2f3b52;
+    color: #ffffff;
+}
+
+.results-table .num {
+    text-align: right;
+}
+
+.results-table tr.correct td:nth-child(4) {
+    color: #81c995;
+    font-weight: bold;
+}
+
+.results-table tr.incorrect td:nth-child(4) {
+    color: #f28b82;
+    font-weight: bold;
 }
 
 /* ==============================
