@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | Web Browsers</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Quiz JS defers run until after HTML loads -->
+    <script src="quiz.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Site header and main menu -->
+    <header class="site-header">
+        <div class="header-content">
+            <p class="site-name"><a href="index.html">Web Browsers</a></p>
+            <nav class="main-nav" aria-label="Main menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browserhistory.html">Browser History</a></li>
+                    <li><a href="popularbrowsers.html">Popular Browsers</a></li>
+                    <li><a href="keyconcepts.html">Key Concepts</a></li>
+                    <li><a href="references.html">References</a></li>
+                    <li><a href="quiz.html" aria-current="page">Quiz</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main page content -->
+    <main class="page-content">
+        <div class="content-container">
+            <h1 id="page-title">Web Browsers Quiz</h1>
+            <p class="lead">
+                Test what you learned from this site. The questions cover browser
+                history, today's popular browsers and the key concepts behind the web.
+            </p>
+
+            <!-- Start screen, shown until the user clicks Start -->
+            <section id="quiz-intro" class="card">
+                <h2>Before You Start</h2>
+                <ul>
+                    <li>10 questions, worth 1 point each</li>
+                    <li>You have <strong>10 minutes</strong>. The quiz submits automatically when time runs out.</li>
+                    <li>You need <strong>7 out of 10</strong> to pass.</li>
+                    <li>Questions with checkboxes can have more than one correct answer. You must select all of them, and only them, to get the point.</li>
+                </ul>
+                <button type="button" id="start-btn" class="btn btn-primary">Start Quiz</button>
+            </section>
+
+            <!-- Countdown timer, stays at the top of the screen while scrolling -->
+            <div id="quiz-timer" class="quiz-timer" hidden>
+                Time left: <span id="time-left">10:00</span>
+            </div>
+
+            <!-- Results, filled in by quiz.js after the quiz is submitted -->
+            <section id="quiz-results" class="quiz-results" aria-live="polite" hidden></section>
+
+            <!-- The quiz form, user can submit with blank ansers. Unanswered questions are marked incorrect -->
+            <form id="quiz-form" class="quiz-form" novalidate hidden>
+
+                <!-- Question 1: fill in the blank -->
+                <fieldset class="question" id="q1">
+                    <legend>1. Fill in the blank</legend>
+                    <label for="q1-input">The first web browser, WorldWideWeb, was created at CERN in 1990 by</label>
+                    <input type="text" id="q1-input" name="q1" autocomplete="off" placeholder="Type your answer">
+                    <div class="feedback"></div>
+                </fieldset>
+
+                <!-- Question 2: multiple choice (one answer) -->
+                <fieldset class="question" id="q2">
+                    <legend>2. Which browser, released in 1993, is considered the first mainstream web browser?</legend>
+                    <div class="choices">
+                        <label><input type="radio" name="q2" value="netscape"> Netscape Navigator</label>
+                        <label><input type="radio" name="q2" value="mosaic"> NCSA Mosaic</label>
+                        <label><input type="radio" name="q2" value="ie"> Internet Explorer</label>
+                        <label><input type="radio" name="q2" value="firefox"> Firefox</label>
+                    </div>
+                    <div class="feedback"></div>
+                </fieldset>
+
+                <!-- Question 3: multiple choice (one answer) -->
+                <fieldset class="question" id="q3">
+                    <legend>3. Which browser won the first browser war, reaching about 90% user share by 2001?</legend>
+                    <div class="choices">
+                        <label><input type="radio" name="q3" value="netscape"> Netscape Navigator</label>
+                        <label><input type="radio" name="q3" value="chrome"> Google Chrome</label>
+                        <label><input type="radio" name="q3" value="ie"> Internet Explorer</label>
+                        <label><input type="radio" name="q3" value="opera"> Opera</label>
+                    </div>
+                    <div class="feedback"></div>
+                </fieldset>
+
+                <!-- Question 4: multiple selection (more than one answer) -->
+                <fieldset class="question" id="q4">
+                    <legend>4. Which of these browsers are built on Chromium? (Select all that apply)</legend>
+                    <div class="choices">
+                        <label><input type="checkbox" name="q4" value="edge"> Microsoft Edge</label>
+                        <label><input type="checkbox" name="q4" value="safari"> Safari</label>
+                        <label><input type="checkbox" name="q4" value="opera"> Opera</label>
+                        <label><input type="checkbox" name="q4" value="firefox"> Firefox</label>
+                        <label><input type="checkbox" name="q4" value="brave"> Brave</label>
+                    </div>
+                    <div class="feedback"></div>
+                </fieldset>
+
+                <!-- Question 5: multiple choice (one answer) -->
+                <fieldset class="question" id="q5">
+                    <legend>5. Which browser engine does Safari use?</legend>
+                    <div class="choices">
+                        <label><input type="radio" name="q5" value="gecko"> Gecko</label>
+                        <label><input type="radio" name="q5" value="webkit"> WebKit</label>
+                        <label><input type="radio" name="q5" value="chromium"> Chromium</label>
+                        <label><input type="radio" name="q5" value="v8"> V8</label>
+                    </div>
+                    <div class="feedback"></div>
+                </fieldset>
+
+                <!-- Question 6: fill in the blank -->
+                <fieldset class="question" id="q6">
+                    <legend>6. Fill in the blank</legend>
+                    <label for="q6-input">DNS stands for</label>
+                    <input type="text" id="q6-input" name="q6" autocomplete="off" placeholder="Type your answer">
+                    <div class="feedback"></div>
+                </fieldset>
+
+                <!-- Question 7: multiple choice (one answer) -->
+                <fieldset class="question" id="q7">
+                    <legend>7. What does HTTPS add compared to HTTP?</legend>
+                    <div class="choices">
+                        <label><input type="radio" name="q7" value="speed"> Faster page loading</label>
+                        <label><input type="radio" name="q7" value="encryption"> Encryption of the data sent between browser and server</label>
+                        <label><input type="radio" name="q7" value="addresses"> Turning domain names into IP addresses</label>
+                        <label><input type="radio" name="q7" value="images"> Support for images inline with text</label>
+                    </div>
+                    <div class="feedback"></div>
+                </fieldset>
+
+                <!-- Question 8: multiple selection (more than one answer) -->
+                <fieldset class="question" id="q8">
+                    <legend>8. Which of these are protocols used to move data across the internet? (Select all that apply)</legend>
+                    <div class="choices">
+                        <label><input type="checkbox" name="q8" value="http"> HTTP</label>
+                        <label><input type="checkbox" name="q8" value="html"> HTML</label>
+                        <label><input type="checkbox" name="q8" value="tcp"> TCP</label>
+                        <label><input type="checkbox" name="q8" value="css"> CSS</label>
+                        <label><input type="checkbox" name="q8" value="dns"> DNS</label>
+                    </div>
+                    <div class="feedback"></div>
+                </fieldset>
+
+                <!-- Question 9: fill in the blank -->
+                <fieldset class="question" id="q9">
+                    <legend>9. Fill in the blank</legend>
+                    <label for="q9-input">Google's JavaScript engine, released with Chrome in 2008, is called</label>
+                    <input type="text" id="q9-input" name="q9" autocomplete="off" placeholder="Type your answer">
+                    <div class="feedback"></div>
+                </fieldset>
+
+                <!-- Question 10: multiple choice (one answer) -->
+                <fieldset class="question" id="q10">
+                    <legend>10. What does WebAssembly allow?</legend>
+                    <div class="choices">
+                        <label><input type="radio" name="q10" value="ai"> Browsers built entirely around AI</label>
+                        <label><input type="radio" name="q10" value="native"> Languages like C, C++ and Rust to run in the browser at near-native speed</label>
+                        <label><input type="radio" name="q10" value="replace"> Websites to run without HTML</label>
+                        <label><input type="radio" name="q10" value="offline"> Browsers to load pages without a server</label>
+                    </div>
+                    <div class="feedback"></div>
+                </fieldset>
+
+                <!-- Submit grades the quiz; Retake clears everything and starts over -->
+                <div class="quiz-buttons">
+                    <button type="submit" id="submit-btn" class="btn btn-primary">Submit Quiz</button>
+                    <button type="button" id="retake-btn" class="btn btn-secondary" hidden>Retake Quiz</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>This website is a class project for IT 3203 Web Development.</p>
+            <p><a href="https://ksuweb.github.io/IT3203/">Visit the IT 3203 class website</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
