@@ -27,7 +27,7 @@
             </nav>
         </div>
     </header>
-
+    
     <!-- Main page content -->
     <main class="page-content">
         <div class="content-container">
@@ -40,7 +40,8 @@
 
             <!-- Concept list -->
             <div class="card-grid card-rows">
-                <article class="card">
+                <!-- Each concept has an id so other pages can link straight to it, e.g. keyconcepts.html#dns -->
+                <article class="card" id="url">
                     <h3>URL</h3>
                     <p>
                         A Uniform Resource Locator is the address of a page on the web,
@@ -48,7 +49,7 @@
                         address bar is how a user starts loading a page.
                     </p>
                 </article>
-                <article class="card">
+                <article class="card" id="http">
                     <h3>HTTP and HTTPS</h3>
                     <p>
                         Hypertext Transfer Protocol lets a browser request pages from a
@@ -56,7 +57,7 @@
                         the data sent between the browser and the server.
                     </p>
                 </article>
-                <article class="card">
+                <article class="card" id="tcp">
                     <h3>TCP</h3>
                     <p>
                         Transmission Control Protocol delivers data reliably between devices.
@@ -64,14 +65,14 @@
                         the correct order.
                     </p>
                 </article>
-                <article class="card">
+                <article class="card" id="ip">
                     <h3>IP</h3>
                     <p>
                         Internet Protocol gives every device a unique address, called an IP
                         address, and routes packets to those addresses.
                     </p>
                 </article>
-                <article class="card">
+                <article class="card" id="dns">
                     <h3>DNS</h3>
                     <p>
                         The Domain Name System works like a phonebook. It turns easy to
@@ -79,14 +80,14 @@
                         addresses computers use.
                     </p>
                 </article>
-                <article class="card">
+                <article class="card" id="browser-engine">
                     <h3>Browser Engine</h3>
                     <p>
                         The part of a browser that interprets HTML, CSS and JavaScript and
                         draws the page. The three major engines are Chromium, WebKit and Gecko.
                     </p>
                 </article>
-                <article class="card">
+                <article class="card" id="javascript">
                     <h3>JavaScript</h3>
                     <p>
                         The language used with HTML and CSS to build web apps. Introduced in
